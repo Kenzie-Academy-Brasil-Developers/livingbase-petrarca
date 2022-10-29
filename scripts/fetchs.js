@@ -1,4 +1,4 @@
-// importar ditador de página
+import { renderFeed } from "./renderPosts.js"
 
 const baseUrl = "https://m2-api-living.herokuapp.com/news"
 const pageSelected = 0
@@ -13,7 +13,6 @@ export async function posts(){
     .then(res => res.json())
     .then(res => res)
     .then(res => {
-        console.log(res, "Resposta da API")
         return res
     })
     .catch(err => console.log(err, "Erro da API"))
@@ -30,7 +29,7 @@ export async function openPost(postId){
     .then(res => res.json())
     .then(res => res)
     .then(res => {
-        console.log(res, "Post Selecionado")
+        // console.log(res, "Post Selecionado")
         return res
     })
     .catch(err => console.log(err, "Erro ao selecionar Post"))

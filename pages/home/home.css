@@ -1,17 +1,24 @@
-body{
+body {
     display: flex;
     justify-content: center;
     padding-top: 50px;
+    background-color: var(--color-grey-600);
 }
 
 main {
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
     gap: 60px;
 }
 
+section {
+    min-width: 890px;
+    max-width: 890px;
+}
+
 nav .nav-buttons {
     display: flex;
     gap: 25px;
-    overflow-x:unset;
+    overflow-x: unset;
 }
