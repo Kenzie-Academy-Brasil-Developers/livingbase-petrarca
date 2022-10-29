@@ -1,4 +1,4 @@
-button {
+.news-category {
     background-color: var(--color-grey-700);
     border: 1px solid transparent;
     padding: 6px 10px;
@@ -7,13 +7,14 @@ button {
     font-size: 13px;
     color: var(--color-grey-200);
     transition: ease .15s;
+    cursor: pointer;
 }
 
-button:hover{
+.news-category:hover{
     background-color: var(--color-grey-500);
 }
 
-button:focus{
+.news-category:focus{
     background-color: var(--color-brand-200);
     color: var(--color-grey-700);
 }

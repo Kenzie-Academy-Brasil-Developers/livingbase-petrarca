@@ -7,7 +7,7 @@ export function renderFeed() {
     if (filterSelected) {
         finalyRender(filterSelected)
     } else {
-        finalyRender("todos")
+        finalyRender("Todos")
     }
 }
 
@@ -25,12 +25,12 @@ async function finalyRender(category) {
             const contentBox = document.createElement('div')
             const title = document.createElement('h6')
             const description = document.createElement('p')
-            const acessBtn = document.createElement('btn')
+            const acessBtn = document.createElement('button')
 
             card.classList.add("news-card")
             figure.classList.add("news-img")
             contentBox.classList.add("news-description")
-
+            acessBtn.classList.add("open-post-btn")
 
             img.src = post.image
             title.innerText = post.title
