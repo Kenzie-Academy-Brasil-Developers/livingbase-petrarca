@@ -1,0 +1,17 @@
+body{
+    display: flex;
+    justify-content: center;
+    padding-top: 50px;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+}
+
+nav .nav-buttons {
+    display: flex;
+    gap: 25px;
+    overflow-x:unset;
+}
