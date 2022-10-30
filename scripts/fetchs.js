@@ -33,4 +33,6 @@ export async function openPost(postId){
         return res
     })
     .catch(err => console.log(err, "Erro ao selecionar Post"))
+
+    return response
 }   

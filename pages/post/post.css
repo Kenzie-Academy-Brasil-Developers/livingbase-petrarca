@@ -1,1 +1,4 @@
-/* Desenvolva seu estilo aqui */
+body {
+    display: flex;
+    background-color: var(--color-grey-700);
+}

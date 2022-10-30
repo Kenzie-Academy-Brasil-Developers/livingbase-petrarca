@@ -1,4 +1,6 @@
-import { posts } from "./fetchs.js"
+import { openPost, posts } from "./fetchs.js"
+import {openPostFunc} from "./openPost.js"
+
 
 const feedReceiver = document.querySelector(".feed-receiver")
 
@@ -41,6 +43,11 @@ async function finalyRender(category) {
             contentBox.append(title,description)
             card.append(figure, contentBox, acessBtn)
             feedReceiver.append(card)
+
+            acessBtn.addEventListener('click', (event => {
+                event.preventDefault()
+                openPostFunc(post.id)
+            }))
         }
     })
 }
