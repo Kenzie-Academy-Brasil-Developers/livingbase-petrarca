@@ -12,7 +12,7 @@ export function filterBtnFunc() {
             localStorage.setItem("newsFilter", filterSelect)
             renderFeed()
             if(counterNewRender.counting > 2){
-                console.log("Contador acima de 2", counterNewRender.counting)
+                console.log("Contador que previne loop do scroll infinito acima de 2,", counterNewRender.counting)
                 counterNewRender.counting = 1
             }
         })
