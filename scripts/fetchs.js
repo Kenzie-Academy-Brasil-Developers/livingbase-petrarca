@@ -1,11 +1,11 @@
-import { renderFeed } from "./renderPosts.js"
+
 
 const baseUrl = "https://m2-api-living.herokuapp.com/news"
 const pageSelected = 0
 const pageSelector = `?page=${pageSelected}`
 
-export async function posts(){
-    const urlCreate = `${baseUrl}${pageSelector}`
+export async function posts(page){
+    const urlCreate = `${baseUrl}?page=${page}`
      
     let response = await fetch(urlCreate, {
         method: "GET" 

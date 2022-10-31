@@ -23,3 +23,8 @@ nav .nav-buttons {
     gap: 25px;
     overflow-x: unset;
 }
+
+.scroll-observer {
+    width: 100%;
+    height: 1px;
+}

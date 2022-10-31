@@ -1,26 +1,31 @@
-import { openPost, posts } from "./fetchs.js"
-import {openPostFunc} from "./openPost.js"
-import { observer } from "./infinityScroll.js"
+import { posts } from "./fetchs.js"
+import { openPostFunc } from "./openPost.js"
+import { feedReceiver } from "./renderPosts.js"
 
+export const observer = new IntersectionObserver((entries) => renderNewPosts())
 
-export const feedReceiver = document.querySelector(".feed-receiver")
-const observerDiv = document.querySelector('.scroll-observer')
+export let counterNewRender = {
+    counting : 1,
+}
+    async function renderNewPosts() {
+    const data = await posts(counterNewRender.counting)
 
-export async function renderFeed() {
-    observer.observe(observerDiv)
-    const firstPosts = await posts(0)
+    if (counterNewRender.counting < 3) {
+        filterNewPosts(data.news)
+    }
+    counterNewRender.counting++
+}
+
+function filterNewPosts(posts) {
     const filterSelected = JSON.parse(localStorage.getItem('newsFilter'))
     if (filterSelected) {
-        finalyRender(filterSelected, firstPosts)
+        addToFeed(filterSelected, posts)
     } else {
-        finalyRender("Todos", firstPosts)
+        addToFeed("Todos", posts)
     }
 }
 
-function finalyRender(category, postsRaw) {
-    feedReceiver.innerText = ""
-    const postArr = postsRaw.news
-    
+function addToFeed(category, postArr) {
     postArr.forEach(post => {
         if (post.category == category || category == "Todos") {
             const card = document.createElement('li')
@@ -43,7 +48,7 @@ function finalyRender(category, postsRaw) {
             acessBtn.innerText = "Acessar conteúdo"
 
             figure.append(img)
-            contentBox.append(title,description)
+            contentBox.append(title, description)
             card.append(figure, contentBox, acessBtn)
             feedReceiver.append(card)
 

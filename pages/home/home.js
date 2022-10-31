@@ -3,6 +3,7 @@ import {filterBtnFunc} from "../../scripts/filter.js"
 import {renderFeed} from "../../scripts/renderPosts.js"
 
 
+
 window.onload = () => {
     renderFeed()
 }
