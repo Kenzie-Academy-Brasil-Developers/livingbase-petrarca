@@ -3,7 +3,6 @@ header{
     height: 90px;
     display: flex;
     justify-content: center;
-    background-color: var(--color-grey-600);
 }
 .small-header {
     width: 890px;

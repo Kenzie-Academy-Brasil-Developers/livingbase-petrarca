@@ -1,7 +1,7 @@
 import { renderFeed } from "./renderPosts.js"
 
 const baseUrl = "https://m2-api-living.herokuapp.com/news"
-const pageSelected = 2
+const pageSelected = 0
 const pageSelector = `?page=${pageSelected}`
 
 export async function posts(){

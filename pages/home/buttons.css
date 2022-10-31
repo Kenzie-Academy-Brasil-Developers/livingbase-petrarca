@@ -18,3 +18,14 @@
     background-color: var(--color-brand-200);
     color: var(--color-grey-700);
 }
+
+.return-top {
+    width: fit-content;
+    height: fit-content;
+    margin-top: 6px;
+    background-color: var(--color-grey-200);
+    padding: 8px 16px;
+    color: var(--color-grey-700);
+    border: 1px solid transparent;
+    border-radius: 16px;
+}
